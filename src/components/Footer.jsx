@@ -4,11 +4,15 @@ export default function Footer() {
   return (
     <footer className="main-footer">
       <strong>
-        Copyright © 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.
+        MisionTIC 2022 - Ciclo 4a - 
+        <a href="https://github.com/DavidEGiraldo/envio_paquetes">
+          InstaYa - Plataforma de recogida de paquetes  
+        </a>
+        .
       </strong>
       All rights reserved.
       <div className="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.2.0
+        <b>Version</b> 1.0.0
       </div>
     </footer>
   );

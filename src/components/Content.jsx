@@ -8,15 +8,15 @@ export default function Content() {
         <div className="container-fluid">
           <div className="row mb-2">
             <div className="col-sm-6">
-              <h1 className="m-0">Starter Page</h1>
+              <h1 className="m-0">Inicio - Listado de órdenes</h1>
             </div>
             {/* /.col */}
             <div className="col-sm-6">
               <ol className="breadcrumb float-sm-right">
                 <li className="breadcrumb-item">
-                  <a href="#">Home</a>
+                  <a href="">Inicio</a>
                 </li>
-                <li className="breadcrumb-item active">Starter Page</li>
+                <li className="breadcrumb-item active">Listado de órdenes</li>
               </ol>
             </div>
             {/* /.col */}
@@ -29,76 +29,19 @@ export default function Content() {
       {/* Main content */}
       <div className="content">
         <div className="container-fluid">
-          <table className="table table-striped">
+          <table className="table table-striped table-hover">
             <thead>
               <tr>
-                <th style={{ width: 10 }}>#</th>
-                <th>Task</th>
-                <th>Progress</th>
-                <th style={{ width: 40 }}>Label</th>
+                <th style={{ width: 100 }}># Servicio</th>
+                <th>Fecha</th>
+                <th>Ciudad Entrega</th>
+                <th>Dirección Entrega</th>
+                <th>Estado</th>
+                <th style={{ width: 40 }}></th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1.</td>
-                <td>Update software</td>
-                <td>
-                  <div className="progress progress-xs">
-                    <div
-                      className="progress-bar progress-bar-danger"
-                      style={{ width: "55%" }}
-                    />
-                  </div>
-                </td>
-                <td>
-                  <span className="badge bg-danger">55%</span>
-                </td>
-              </tr>
-              <tr>
-                <td>2.</td>
-                <td>Clean database</td>
-                <td>
-                  <div className="progress progress-xs">
-                    <div
-                      className="progress-bar bg-warning"
-                      style={{ width: "70%" }}
-                    />
-                  </div>
-                </td>
-                <td>
-                  <span className="badge bg-warning">70%</span>
-                </td>
-              </tr>
-              <tr>
-                <td>3.</td>
-                <td>Cron job running</td>
-                <td>
-                  <div className="progress progress-xs progress-striped active">
-                    <div
-                      className="progress-bar bg-primary"
-                      style={{ width: "30%" }}
-                    />
-                  </div>
-                </td>
-                <td>
-                  <span className="badge bg-primary">30%</span>
-                </td>
-              </tr>
-              <tr>
-                <td>4.</td>
-                <td>Fix and squish bugs</td>
-                <td>
-                  <div className="progress progress-xs progress-striped active">
-                    <div
-                      className="progress-bar bg-success"
-                      style={{ width: "90%" }}
-                    />
-                  </div>
-                </td>
-                <td>
-                  <span className="badge bg-success">90%</span>
-                </td>
-              </tr>
+            <tbody className="table-group-divider">
+              
             </tbody>
           </table>
         </div>
