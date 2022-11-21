@@ -4,7 +4,7 @@ export default function Aside() {
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-4">
       {/* Brand Logo */}
-      <a href="" className="brand-link">
+      <a href="/" className="brand-link">
         <img
           src="logo_InstaYa.png"
           alt="InstaYa Logo"
@@ -50,13 +50,13 @@ export default function Aside() {
               </a>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
-                  <a href="" className="nav-link active">
+                  <a href="/" className="nav-link active">
                     <i className="fas fa-table nav-icon" />
                     <p>Listado de órdenes</p>
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="" className="nav-link">
+                  <a href="newOrder" className="nav-link">
                     <i className="fas fa-plus-circle nav-icon" />
                     <p>Agregar una órden</p>
                   </a>

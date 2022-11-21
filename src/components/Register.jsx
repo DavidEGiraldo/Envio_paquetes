@@ -8,14 +8,14 @@ export default function Register() {
   return (
     <div className="register-box">
       <div className="register-logo">
-        <a href="../../index3.html">
+        <a href="/">
           <b>Insta</b>Ya
         </a>
       </div>
       <div className="card">
         <div className="card-body register-card-body">
           <p className="login-box-msg">Registrarse en la plataforma</p>
-          <form action="../../index3.html" method="post">
+          <form action="" method="post">
             <div className="input-group mb-3">
               <input
                 type="text"
@@ -87,7 +87,7 @@ export default function Register() {
               {/* /.col */}
             </div>
           </form>
-          <a href="login.html" className="text-center">
+          <a href="login" className="text-center">
             Ya estoy registrado
           </a>
         </div>

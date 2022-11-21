@@ -8,7 +8,7 @@ export default function Login() {
   return (
     <div className="login-box">
       <div className="login-logo">
-        <a href="../../index3.html">
+        <a href="/">
           <b>Insta</b>Ya
         </a>
       </div>
@@ -18,7 +18,7 @@ export default function Login() {
           <p className="login-box-msg">
             Inicia sesión para ingresar a la plataforma
           </p>
-          <form action="../../index3.html" method="post">
+          <form action="" method="post">
             <div className="input-group mb-3">
               <input
                 type="email"
@@ -60,10 +60,10 @@ export default function Login() {
             </div>
           </form>
           <p className="mb-1">
-            <a href="forgot-password.html">Olvidé mi contraseña</a>
+            <a href="">Olvidé mi contraseña</a>
           </p>
           <p className="mb-0">
-            <a href="register.html" className="text-center">
+            <a href="register" className="text-center">
               Registrarse en la plataforma
             </a>
           </p>
