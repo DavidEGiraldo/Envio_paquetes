@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import OrdersTable from "./OrdersTable";
 
 export default function OrdersCard() {
@@ -22,7 +23,7 @@ export default function OrdersCard() {
       </div>
       {/* /.card-body */}
       <div className="card-footer">
-        <a href="newOrder" class="btn btn-sm btn-info float-right">Agregar nueva órden</a>
+        <Link to="newOrder" class="btn btn-info float-right">Agregar nueva órden</Link>
       </div>
       {/* /.card-footer*/}
     </div>

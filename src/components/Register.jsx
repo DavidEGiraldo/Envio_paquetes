@@ -1,16 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Register() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.body.classList.remove("sidebar-mini");
-    document.body.classList.add("register-page");
+    document.body.classList.add("login-page");
+    return () => {
+      document.body.classList.add("sidebar-mini");
+      document.body.classList.remove("login-page");
+    }
   }, []);
   return (
     <div className="register-box">
       <div className="register-logo">
-        <a href="/">
+        <Link to="/">
           <b>Insta</b>Ya
-        </a>
+        </Link>
       </div>
       <div className="card">
         <div className="card-body register-card-body">
@@ -74,7 +79,7 @@ export default function Register() {
                     defaultValue="agree"
                   />
                   <label htmlFor="agreeTerms">
-                    Acepto los <a href="#">términos</a>
+                    Acepto los <Link to="#">términos</Link>
                   </label>
                 </div>
               </div>
@@ -87,9 +92,9 @@ export default function Register() {
               {/* /.col */}
             </div>
           </form>
-          <a href="login" className="text-center">
+          <Link to="/login" className="text-center">
             Ya estoy registrado
-          </a>
+          </Link>
         </div>
         {/* /.form-box */}
       </div>

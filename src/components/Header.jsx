@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -6,23 +7,23 @@ export default function Header() {
       {/* Left navbar links */}
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link" data-widget="pushmenu" href="#" role="button">
+          <NavLink className="nav-link" data-widget="pushmenu" to="#" role="button">
             <i className="fas fa-bars" />
-          </a>
+          </NavLink>
         </li>
         <li className="nav-item d-none d-sm-inline-block">
-          <a href="/" className="nav-link">
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link inactive')}>
             Inicio
-          </a>
+          </NavLink>
         </li>
       </ul>
       {/* Right navbar links */}
       <ul className="navbar-nav ml-auto">
 
         <li className="nav-item">
-          <a href="#" className="nav-link active">
+          <Link to="login" className="nav-link active">
             <p><i class="fas fa-sign-out-alt"></i> Cerrar sesión</p>
-          </a>
+          </Link>
  
         </li>
       </ul>

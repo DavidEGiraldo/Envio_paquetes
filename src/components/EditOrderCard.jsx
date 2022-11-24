@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import OrderForm from "./OrderForm";
 
 export default function EditOrderCard() {
@@ -26,9 +27,9 @@ export default function EditOrderCard() {
         </div>
         {/* /.card-body */}
         <div className="card-footer">
-          <a href="/" class="btn btn-sm btn-info float-right" id="submit">
+          <Link to="/" class="btn btn-warning float-right" id="submit">
             Actualizar orden
-          </a>
+          </Link>
         </div>
         {/* /.card-footer*/}
       </div>

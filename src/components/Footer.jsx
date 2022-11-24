@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
     <footer className="main-footer">
       <strong>
         MisionTIC 2022 - Ciclo 4a - 
-        <a href="https://github.com/DavidEGiraldo/envio_paquetes">
+        <Link to="https://github.com/DavidEGiraldo/envio_paquetes">
           InstaYa - Plataforma de recogida de paquetes  
-        </a>
+        </Link>
         .
       </strong>
       All rights reserved.

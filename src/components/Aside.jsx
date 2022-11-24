@@ -1,10 +1,11 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Aside() {
   return (
     <aside className="main-sidebar sidebar-dark-primary elevation-4">
       {/* Brand Logo */}
-      <a href="/" className="brand-link">
+      <NavLink to="/" className="brand-link">
         <img
           src="logo_InstaYa.png"
           alt="InstaYa Logo"
@@ -12,7 +13,7 @@ export default function Aside() {
           style={{ opacity: ".8" }}
         />
         <span className="brand-text font-weight-normal">InstaYa</span>
-      </a>
+      </NavLink>
       {/* Sidebar */}
       <div className="sidebar">
         {/* Sidebar user panel (optional) */}
@@ -41,36 +42,36 @@ export default function Aside() {
             {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
             <li className="nav-item menu-open">
-              <a href="#" className="nav-link active">
+              <NavLink to="#" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link inactive')}>
                 <i className="nav-icon fas fa-list" />
                 <p>
                   Opciones
                   <i className="right fas fa-angle-left" />
                 </p>
-              </a>
+              </NavLink>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
-                  <a href="/" className="nav-link active">
+                  <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link inactive')}>
                     <i className="fas fa-table nav-icon" />
                     <p>Listado de órdenes</p>
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a href="newOrder" className="nav-link">
+                  <NavLink to="newOrder" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link inactive')}>
                     <i className="fas fa-plus-circle nav-icon" />
                     <p>Agregar una órden</p>
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </li>
             <hr />
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <NavLink to="login" className="nav-link">
                 <i className="nav-icon fas fa-sign-out-alt" />
                 <p>
                   Cerrar sesión
                 </p>
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>

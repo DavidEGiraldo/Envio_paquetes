@@ -1,16 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 export default function Login() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.body.classList.remove("sidebar-mini");
     document.body.classList.add("login-page");
+    return () => {
+      document.body.classList.add("sidebar-mini");
+      document.body.classList.remove("login-page");
+    }
   }, []);
   return (
     <div className="login-box">
       <div className="login-logo">
-        <a href="/">
+        <NavLink to="/">
           <b>Insta</b>Ya
-        </a>
+        </NavLink>
       </div>
       {/* /.login-logo */}
       <div className="card">
@@ -60,12 +65,12 @@ export default function Login() {
             </div>
           </form>
           <p className="mb-1">
-            <a href="">Olvidé mi contraseña</a>
+            <Link to="#">Olvidé mi contraseña</Link>
           </p>
           <p className="mb-0">
-            <a href="register" className="text-center">
+            <NavLink to="/register" className="text-center">
               Registrarse en la plataforma
-            </a>
+            </NavLink>
           </p>
         </div>
         {/* /.login-card-body */}

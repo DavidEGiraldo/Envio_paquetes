@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+
   </head>
   <body class="hold-transition sidebar-mini">
     
@@ -43,5 +45,21 @@
   <script src="https://adminlte.io/themes/v3/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <script src="https://adminlte.io/themes/v3/dist/js/adminlte.js"></script>
   <script src="https://adminlte.io/themes/v3/dist/js/pages/dashboard.js"></script>
+  <script src="https://adminlte.io/themes/v3/plugins/inputmask/jquery.inputmask.min.js"></script>
+
+  <script>
+    $(function () {
+      //Date picker
+      $('#reservationdate').datetimepicker({
+      format: 'L'
+      });
+  
+      //Timepicker
+      $('#timepicker').datetimepicker({
+        format: 'LT'
+      })
+  
+    })
+  </script>
 
 </html>
