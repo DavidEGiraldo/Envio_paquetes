@@ -7,7 +7,7 @@ export default function Aside() {
       {/* Brand Logo */}
       <NavLink to="/" className="brand-link">
         <img
-          src="logo_InstaYa.png"
+          src="/logo_InstaYa.png"
           alt="InstaYa Logo"
           className="brand-image img-circle elevation-3"
           style={{ opacity: ".8" }}
@@ -20,7 +20,7 @@ export default function Aside() {
         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
           <div className="image">
             <img
-              src="usuario.png"
+              src="/usuario.png"
               className="img-circle elevation-2"
               alt="User Image"
             />

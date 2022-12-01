@@ -22,7 +22,7 @@ export default function Header() {
 
         <li className="nav-item">
           <Link to="login" className="nav-link active">
-            <p><i class="fas fa-sign-out-alt"></i> Cerrar sesión</p>
+            <p><i className="fas fa-sign-out-alt"></i> Cerrar sesión</p>
           </Link>
  
         </li>

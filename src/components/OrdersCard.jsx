@@ -23,7 +23,7 @@ export default function OrdersCard() {
       </div>
       {/* /.card-body */}
       <div className="card-footer">
-        <Link to="newOrder" class="btn btn-info float-right">Agregar nueva órden</Link>
+        <Link to="newOrder" className="btn btn-info float-right">Agregar nueva órden</Link>
       </div>
       {/* /.card-footer*/}
     </div>

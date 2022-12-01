@@ -1,14 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import OrderForm from "./OrderForm";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-export default function EditOrderCard() {
+export default function NewOrderCard() {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    fecha: "",
+    hora: "",
+    estado: "Guardado",
+    ancho: "",
+    alto: "",
+    largo: "",
+    peso: "",
+    isDelicado: false,
+    nombreRemitente: "",
+    idRemitente: "",
+    direccionRecogida: "",
+    ciudadRecogida: "",
+    nombreDestinatario: "",
+    idDestinatario: "",
+    direccionEnvio: "",
+    ciudadEnvio: "",
+  });
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    axios
+      .post("http://localhost:5000/orders/create", formData)
+      .then((response) => {
+        console.log(response.data);
+      });
+    navigate("/");
+  };
 
   return (
-    <form>
+    <form onSubmit={onSubmitHandler}>
       <div className="card">
         <div className="card-header">
-          <h3 className="card-title" id="cardTitle">Nueva Orden</h3>
+          <h3 className="card-title" id="cardTitle">
+            Nueva Orden
+          </h3>
           <div className="card-tools">
             <button
               type="button"
@@ -20,20 +54,17 @@ export default function EditOrderCard() {
             </button>
           </div>
         </div>
-        <div
-          className="card-body"
-        >
-          <OrderForm />
+        <div className="card-body">
+          <OrderForm formData={formData} setFormData={setFormData} />
         </div>
         {/* /.card-body */}
         <div className="card-footer">
-          <Link to="/" class="btn btn-success float-right" id="submit">
+          <button className="btn btn-success float-right" type="submit">
             Crear orden
-          </Link>
+          </button>
         </div>
         {/* /.card-footer*/}
       </div>
     </form>
   );
 }
-

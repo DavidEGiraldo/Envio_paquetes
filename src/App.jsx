@@ -14,7 +14,7 @@ export default function App() {
         <Routes>
           <Route exact path='/' element={<Layout />}>
             <Route exact index element={<Orders />}></Route>
-            <Route exact path='editOrder' element={<EditOrder />}></Route>
+            <Route exact path='editOrder/:id' element={<EditOrder />}></Route>
             <Route exact path='newOrder' element={<NewOrder />}></Route>
           </Route>
           <Route exact path='/login' element={<Login />}></Route>

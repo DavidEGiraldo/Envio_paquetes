@@ -9,7 +9,7 @@ export default function Login() {
       document.body.classList.add("sidebar-mini");
       document.body.classList.remove("login-page");
     }
-  }, []);
+  });
   return (
     <div className="login-box">
       <div className="login-logo">
