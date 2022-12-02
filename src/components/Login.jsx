@@ -1,21 +1,47 @@
-import React, { useLayoutEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import axios from "axios";
+import React, { useLayoutEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+
   useLayoutEffect(() => {
     document.body.classList.remove("sidebar-mini");
     document.body.classList.add("login-page");
     return () => {
       document.body.classList.add("sidebar-mini");
       document.body.classList.remove("login-page");
-    }
+    };
   });
+
+  const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log(loginData);
+    axios
+      .post("http://localhost:5000/users/login", loginData)
+      .then((response) => {
+        console.log(response.data);
+      });
+
+    //navigate("/")
+  };
+
+  const handleOnChange = (e) => {
+    const value = e.target.value;
+    setLoginData({ ...loginData, [e.target.id]: value });
+  };
+
   return (
     <div className="login-box">
       <div className="login-logo">
-        <NavLink to="/">
+        <Link to="/">
           <b>Insta</b>Ya
-        </NavLink>
+        </Link>
       </div>
       {/* /.login-logo */}
       <div className="card">
@@ -23,12 +49,15 @@ export default function Login() {
           <p className="login-box-msg">
             Inicia sesión para ingresar a la plataforma
           </p>
-          <form action="" method="post">
+          <form onSubmit={onSubmitHandler}>
             <div className="input-group mb-3">
               <input
                 type="email"
+                id="email"
                 className="form-control"
                 placeholder="Email"
+                value={loginData.email || ""}
+                onChange={handleOnChange}
               />
               <div className="input-group-append">
                 <div className="input-group-text">
@@ -39,8 +68,11 @@ export default function Login() {
             <div className="input-group mb-3">
               <input
                 type="password"
+                id="password"
                 className="form-control"
                 placeholder="Contraseña"
+                value={loginData.password || ""}
+                onChange={handleOnChange}
               />
               <div className="input-group-append">
                 <div className="input-group-text">
@@ -68,9 +100,9 @@ export default function Login() {
             <Link to="#">Olvidé mi contraseña</Link>
           </p>
           <p className="mb-0">
-            <NavLink to="/register" className="text-center">
+            <Link to="/register" className="text-center">
               Registrarse en la plataforma
-            </NavLink>
+            </Link>
           </p>
         </div>
         {/* /.login-card-body */}

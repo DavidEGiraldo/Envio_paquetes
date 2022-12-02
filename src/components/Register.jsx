@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Register() {
@@ -8,8 +8,26 @@ export default function Register() {
     return () => {
       document.body.classList.add("sidebar-mini");
       document.body.classList.remove("login-page");
-    }
-  }, []);
+    };
+  });
+
+  const [registerData, setRegisterData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log(registerData);
+  };
+
+  const handleOnChange = (e) => {
+    e.preventDefault();
+    const value = e.target.value;
+    setRegisterData({ ...registerData, [e.target.id]: value });
+  };
+
   return (
     <div className="register-box">
       <div className="register-logo">
@@ -20,12 +38,15 @@ export default function Register() {
       <div className="card">
         <div className="card-body register-card-body">
           <p className="login-box-msg">Registrarse en la plataforma</p>
-          <form action="" method="post">
+          <form onSubmit={onSubmitHandler}>
             <div className="input-group mb-3">
               <input
                 type="text"
+                id="name"
                 className="form-control"
                 placeholder="Nombre completo"
+                value={registerData.name}
+                onChange={handleOnChange}
               />
               <div className="input-group-append">
                 <div className="input-group-text">
@@ -36,8 +57,11 @@ export default function Register() {
             <div className="input-group mb-3">
               <input
                 type="email"
+                id="email"
                 className="form-control"
                 placeholder="Email"
+                value={registerData.email}
+                onChange={handleOnChange}
               />
               <div className="input-group-append">
                 <div className="input-group-text">
@@ -48,8 +72,11 @@ export default function Register() {
             <div className="input-group mb-3">
               <input
                 type="password"
+                id="password"
                 className="form-control"
                 placeholder="Contraseña"
+                value={registerData.password}
+                onChange={handleOnChange}
               />
               <div className="input-group-append">
                 <div className="input-group-text">

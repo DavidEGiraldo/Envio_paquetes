@@ -23,6 +23,7 @@ export default function NewOrderCard() {
     idDestinatario: "",
     direccionEnvio: "",
     ciudadEnvio: "",
+    userId: "6389343a7034499e815beb30"
   });
 
   const onSubmitHandler = (e) => {

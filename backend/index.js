@@ -1,21 +1,12 @@
 let express = require("express");
-let mongoose = require("mongoose");
 let cors = require("cors");
 let bodyParser = require("body-parser");
 require("dotenv").config();
 
 const orderRoute = require("../backend/routes/order.route");
+const userRoute = require("../backend/routes/user.route");
 
-mongoose
-  .connect(process.env.MONGO_DB_URI)
-  .then((x) => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch((err) => {
-    console.error("Error connecting to mongo", err.reason);
-  });
+require("../backend/db/db");
 
 const app = express();
 app.use(bodyParser.json());
@@ -26,6 +17,7 @@ app.use(
 );
 app.use(cors());
 app.use("/orders", orderRoute);
+app.use("/users", userRoute);
 
 // PORT
 const port = process.env.PORT || 4000;

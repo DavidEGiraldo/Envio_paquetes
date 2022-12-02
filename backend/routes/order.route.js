@@ -7,7 +7,7 @@ let orderSchema = require("../models/Order");
 // CRUD
 
 //Create
-//localhost:5000/orders/create
+//http://localhost:5000/orders/create
 router.route("/create").post((req, res, next) => {
   orderSchema.create(req.body, (error, data) => {
     if (error) {
@@ -19,9 +19,9 @@ router.route("/create").post((req, res, next) => {
 });
 
 //Read orders
-//localhost:5000/orders/
+//http://localhost:5000/orders?userId=1234
 router.route("/").get((req, res, next) => {
-  orderSchema.find((error, data) => {
+  orderSchema.find({ userId: req.query.userId }, (error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -31,7 +31,7 @@ router.route("/").get((req, res, next) => {
 });
 
 //Read sigle order
-//localhost:5000/orders/1
+//http://localhost:5000/orders/1
 router.route("/:id").get((req, res, next) => {
   orderSchema.findById(req.params.id, (error, data) => {
     if (error) {
@@ -43,7 +43,7 @@ router.route("/:id").get((req, res, next) => {
 });
 
 //Update order
-//localhost:5000/orders/edit/1
+//http://localhost:5000/orders/edit/1
 router.route("/edit/:id").put((req, res, next) => {
   orderSchema.findByIdAndUpdate(
     req.params.id,
@@ -62,7 +62,7 @@ router.route("/edit/:id").put((req, res, next) => {
 });
 
 //Delete order
-//localhost:5000/orders/delete/1
+//http://localhost:5000/orders/delete/1
 router.route("/delete/:id").delete((req, res, next) => {
   orderSchema.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {

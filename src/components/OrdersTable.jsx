@@ -8,7 +8,8 @@ export default function OrdersTable() {
   const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/orders/").then((result) => {
+    const userId = "6389343a7034499e815beb30"
+    axios.get("http://localhost:5000/orders?userId=" + userId).then((result) => {
       console.log(result);
       setOrders(result.data);
     });
