@@ -1,6 +1,9 @@
 FROM node:lts-alpine
 WORKDIR /app
-COPY package.json .
-RUN npm install
 COPY . .
-CMD ["npm", "run dev"]
+RUN npm install
+RUN npm run build
+COPY package.json .
+ENV NODE_ENV production
+EXPOSE 3000
+CMD ["npx", "serve",  "build"]

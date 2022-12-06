@@ -30,7 +30,7 @@ export default function NewOrderCard() {
     e.preventDefault();
     console.log(formData);
     axios
-      .post("http://localhost:5000/orders/create", formData)
+      .post("https://enviopaquetesbackend-production.up.railway.app/orders/create", formData)
       .then((response) => {
         console.log(response.data);
       });

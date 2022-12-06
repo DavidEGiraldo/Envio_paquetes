@@ -40,7 +40,7 @@ export default function EditOrderCard() {
     e.preventDefault();
     console.log(order);
     axios
-      .put("http://localhost:5000/orders/edit/" + id, order)
+      .put("https://enviopaquetesbackend-production.up.railway.app/orders/edit/" + id, order)
       .then((response) => {
         console.log(response.data);
       });

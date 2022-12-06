@@ -9,7 +9,7 @@ export default function OrdersTable() {
 
   useEffect(() => {
     const userId = "6389343a7034499e815beb30"
-    axios.get("http://localhost:5000/orders?userId=" + userId).then((result) => {
+    axios.get("https://enviopaquetesbackend-production.up.railway.app/orders?userId=" + userId).then((result) => {
       console.log(result);
       setOrders(result.data);
     });
@@ -17,7 +17,7 @@ export default function OrdersTable() {
 
   const handleDeleteClick = (orderId) => {
     axios
-      .delete("http://localhost:5000/orders/delete/" + orderId)
+      .delete("https://enviopaquetesbackend-production.up.railway.app/orders/delete/" + orderId)
       .then((response) => {
         console.log(response.data);
         setUpdate(!update);
